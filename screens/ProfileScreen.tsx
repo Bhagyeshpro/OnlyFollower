@@ -26,6 +26,8 @@ const ProfileScreen = ({ navigation, route }) => {
   )
 }
 
+// Adding icons
+
 export default ProfileScreen
 
 const styles = StyleSheet.create({
