@@ -1,14 +1,14 @@
-import { StyleSheet, View, FlatList } from 'react-native'
+import { StyleSheet, View, FlatList, Button } from 'react-native'
 import React from 'react'
 import users from "../assets/users"
 import UserCard from "../src/components/UserCard"
 
-const HomeScreen = ({ navigation: {navigate} }) => {
+const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.app}>
       <FlatList
         data={users}
-        renderItem={({ item }) => <UserCard navigate={navigate} user={item} />}
+        renderItem={({ item }) => <UserCard navigation={navigation} user={item} />}
         showsVerticalScrollIndicator={false}
       />
     </View>

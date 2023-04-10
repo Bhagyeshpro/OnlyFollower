@@ -1,11 +1,18 @@
 import { Image, StyleSheet, Text, ImageBackground, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 
-const UserCard = ({user, navigation}) => {
+const UserCard = ({ user, navigation }) => {
   return (
       <ImageBackground source={{ uri: user.coverImage }} style={styles.userCard}
       >
-          <TouchableOpacity style={styles.overlay} onPress={() => navigation.navigate("Profile")} />
+          <TouchableOpacity style={styles.overlay} onPress={() => navigation.navigate('Profile', {
+            id: user.id,
+            name: user.name, 
+            avatar: user.avatar,
+            handle: user.handle,
+            coverImage: user.coverImage,
+            posts: user.posts
+        })} />
           {/* Image */}
           <Image
               src={user.avatar}
