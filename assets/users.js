@@ -24,7 +24,7 @@ export default [
         avatar: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b6cc217a-0522-410c-bbf9-d5aa4316c95a/d6daxyz-9cad3e4e-e3d0-4544-b11c-23f2958ea604.jpg/v1/fill/w_1024,h_1189,q_75,strp/the_lion_man_by_davidgalopim_d6daxyz-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTE4OSIsInBhdGgiOiJcL2ZcL2I2Y2MyMTdhLTA1MjItNDEwYy1iYmY5LWQ1YWE0MzE2Yzk1YVwvZDZkYXh5ei05Y2FkM2U0ZS1lM2QwLTQ1NDQtYjExYy0yM2YyOTU4ZWE2MDQuanBnIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.xyiIqn1DInTyNbmG9Xu-ZB6yeYiFXm1p52ZJflbTd5E",
         name: "Lion Man",
         handle: "Lion",
-        bio: "Yup",
+        bio: "Disney's The Lion King is about a young lion named Simba, who is the crown prince of an African Savanna.",
         subsciptionPrice: 8.99,
         posts: [
             {
