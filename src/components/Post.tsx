@@ -5,6 +5,7 @@ import VerfiedIcon from "react-native-vector-icons/Octicons"
 import ThreeDotsIcon from "react-native-vector-icons/Entypo"
 import HeartOutline from "react-native-vector-icons/Ionicons"
 import HeartFilled from "react-native-vector-icons/Ionicons"
+import DollarIcons from "react-native-vector-icons/FontAwesome5"
 
 const Post = ({ post, user }) => {
   const [isLiked, setIsLiked] = useState(false)
@@ -35,13 +36,15 @@ const Post = ({ post, user }) => {
       </View>
 
       {/* Post Bottom */}
-      <View>
+      <View style={{ flexDirection: "row", alignItems: 'center', }}>
         {isLiked ? (
           <HeartFilled onPress={() => setIsLiked(!isLiked)} name="heart" style={{ fontSize: 35 }} color="#00AFF0" />
         ) : (
-          <HeartOutline onPress={() => setIsLiked(!isLiked)} name="heart-outline" style={{ fontSize: 35 }} color="#00AFF0" />
+          <HeartOutline onPress={() => setIsLiked(!isLiked)} name="heart-outline" style={{ fontSize: 35 }} color="gray" />
         )}
+        <DollarIcons name="dollar-sign" style={{ fontSize: 25, marginLeft: 5 }} color="gray" />
       </View>
+      <Text style={{ color: "gray", fontSize: 15, fontWeight: "400", }}>40 Likes</Text>
     </View>
   )
 }
@@ -51,7 +54,11 @@ export default Post
 const styles = StyleSheet.create({
   postContainer: {
     flex: 1,
-    padding: 15
+    paddingHorizontal: 15,
+    paddingVertical: 10,
+    borderBottomColor: "#D3D3D3",
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    // borderBottomWidth: 
   },
   postHeader: {
     flexDirection: "row",
@@ -70,5 +77,7 @@ const styles = StyleSheet.create({
     height: 400,
     marginVertical: 5,
     resizeMode: "cover"
+  },
+  postBottom: {
   }
 })

@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, ImageBackground, SafeAreaView, TouchableOpacity, } from 'react-native'
+import { StyleSheet, Text, View, Image, ImageBackground, SafeAreaView, TouchableOpacity, Pressable, } from 'react-native'
 import React, { useState } from 'react'
 
 import users from "../../assets/users"
@@ -8,10 +8,9 @@ import ShareIcons from "react-native-vector-icons/FontAwesome";
 import StarIcons from "react-native-vector-icons/Feather"
 import VerfiedIcons from "react-native-vector-icons/Octicons"
 
-const ProfileHeader = ({ id, navigation, route}) => {
+const ProfileHeader = ({ id, navigation, route, isSubscribed, setIsSubscribed }) => {
 
   // const { id } = route.params;
-  const [isSubscribed, setIsSubscribed] = useState(false)
 
   const user = users.find((u) => u.id === id)
 
@@ -53,12 +52,19 @@ const ProfileHeader = ({ id, navigation, route}) => {
         <Text style={{ color: "#000000", fontSize: 20, fontWeight: "400", lineHeight: 25, marginBottom: 10 }}>{user?.bio}</Text>
         <Text style={{ color: "gray", fontSize: 20, fontWeight: "bold", }}>SUBSCRIPTION</Text>
 
-        <TouchableOpacity delayPressIn={0} onPress={() =>
+        <Pressable onPress={() =>
           setIsSubscribed(!isSubscribed)} style={[styles.button, { backgroundColor: isSubscribed ? "#ffffff" : "#00AFF0" }]}>
           <Text style={[styles.buttonText, { color: isSubscribed ? "#00AFF0" : "white" }]}>{isSubscribed ? "SUBSCRIBED" : "SUBSCRIBE"}</Text>
           <Text style={[styles.buttonText, { color: isSubscribed ? "#00AFF0" : "white" }]}>{user?.subsciptionPrice === 0 ? "FOR FREE" : `$${user?.subsciptionPrice} / month`}</Text>
-        </TouchableOpacity>
+        </Pressable>
       </View>
+      <View
+        style={{
+          borderBottomColor: '#D3D3D3',
+          borderBottomWidth: StyleSheet.hairlineWidth,
+        }}
+      />
+      {/* <Divider orientation="center"></Divider> */}
     </View>
   )
 }
@@ -71,7 +77,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   coverImage: {
-    height: 200,
+    height: 190,
     width: "100%",
   },
   overlay: {
