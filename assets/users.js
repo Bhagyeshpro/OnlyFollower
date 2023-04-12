@@ -28,7 +28,7 @@ export default [
         subsciptionPrice: 8.99,
         posts: [
             {
-                caption: "You will know me!!",
+                caption: "There is something about seeing rhinos and lions running free that excites you. It's not that you feel afraid; it's more like you're liberated by seeing them.",
                 postImage: "https://i.pinimg.com/originals/3c/f6/ae/3cf6ae7050dc0cafae63a7b9e5a77bb1.jpg"
             },
             {
