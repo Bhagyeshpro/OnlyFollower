@@ -1,4 +1,4 @@
-import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native'
+import { FlatList, Pressable, SafeAreaView, StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
 import users from "../assets/users"
 import Post from '../src/components/Post';
@@ -20,7 +20,7 @@ const ProfileScreen = ({ navigation, route }) => {
 
   if (!isSubscribed) {
     return (
-      <View style={{ flex: 1 }}>
+      <SafeAreaView style={{ flex: 1 }}>
         <ProfileHeader
           id={id}
           isSubscribed={isSubscribed}
@@ -47,12 +47,12 @@ const ProfileScreen = ({ navigation, route }) => {
             </Pressable>
           </View>
         </View>
-      </View>
+      </SafeAreaView>
     )
   }
 
   return (
-    <View style={{ backgroundColor: "#ffffff", flex: 1 }}>
+    <SafeAreaView style={{ backgroundColor: "#ffffff", flex: 1 }}>
 
       {/* Posts */}
       <FlatList
@@ -68,7 +68,7 @@ const ProfileScreen = ({ navigation, route }) => {
           />
         )}
       />
-    </View>
+    </SafeAreaView>
 
   )
 }

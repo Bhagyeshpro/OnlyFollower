@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "flex-end",
         borderRadius: 5,
-        marginVertical: 5,
+        marginBottom: 10,
         overflow: "hidden",
     },
     userImage: {

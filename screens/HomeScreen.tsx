@@ -1,17 +1,20 @@
-import { StyleSheet, View, FlatList, Button } from 'react-native'
+import { StyleSheet, View, FlatList, Button, Pressable, Text, SafeAreaView } from 'react-native'
 import React from 'react'
 import users from "../assets/users"
 import UserCard from "../src/components/UserCard"
 
 const HomeScreen = ({ navigation }) => {
   return (
-    <View style={styles.app}>
+    <SafeAreaView style={styles.app}>
+      <Pressable style={styles.button} onPress={() => navigation.navigate("NewPost")}>
+        <Text style={styles.buttonText}>NEW POST</Text>
+      </Pressable>
       <FlatList
         data={users}
         renderItem={({ item }) => <UserCard navigation={navigation} user={item} />}
         showsVerticalScrollIndicator={false}
       />
-    </View>
+    </SafeAreaView>
   )
 }
 
@@ -22,7 +25,23 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#f2f4f4",
     padding: 10,
-    marginBottom: 10
+  },
+  button: {
+    borderColor: "gainsboro",
+    borderWidth: 1,
+    borderRadius: 30,
+    marginBottom: 10,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#00AFF0"
+  },
+  buttonText: {
+    color: "#ffffff",
+    fontSize: 20,
+    fontWeight: '700',
+    marginHorizontal: 40,
+    marginVertical: 10,
   },
   
 })

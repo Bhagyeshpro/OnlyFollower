@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './screens/HomeScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import RandomScreen from './screens/RandomScreen';
+import NewPostScreen from './screens/NewPostScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -32,7 +33,11 @@ const App = () => {
           component={RandomScreen}
           options={{ title: 'OnlyFollowers', headerShown: false }}
         />
-
+        <Stack.Screen
+          name="NewPost"
+          component={NewPostScreen}
+          options={{ title: 'OnlyFollowers', headerShown: false }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   )
