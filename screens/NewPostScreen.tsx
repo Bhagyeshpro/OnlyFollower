@@ -1,5 +1,6 @@
 import { SafeAreaView, StyleSheet, Text, View, Pressable, TextInput } from 'react-native'
 import React, { useState } from 'react'
+import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 
 import ArrowIcons from "react-native-vector-icons/Ionicons";
 import VidoeIcons from "react-native-vector-icons/Feather"
@@ -9,12 +10,17 @@ import PostIcons from "react-native-vector-icons/MaterialCommunityIcons"
 const NewPostScreen = ({ navigation }) => {
   const [postCaption, setPostCaption] = useState("")
 
+  const selectPostImage = () => {
+
+    // You can also use as a promise without 'callback':
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.newPostHeader}>
         <ArrowIcons name="ios-arrow-back-sharp" onPress={() => navigation.goBack()} style={styles.icon} color="#000000" />
         <Text style={{ flex: 1, color: "black", fontSize: 25, fontWeight: "700", alignSelf: 'center', }}>NEW POST</Text>
-        <Pressable style={[styles.button, postCaption ? { backgroundColor: '#00AFF0' } : { backgroundColor: "#A9A9A9"}]}>
+        <Pressable style={[styles.button, postCaption ? { backgroundColor: '#00AFF0' } : { backgroundColor: "#A9A9A9" }]}>
           <Text style={styles.buttonText}>POST</Text>
         </Pressable>
       </View>
@@ -28,7 +34,7 @@ const NewPostScreen = ({ navigation }) => {
             placeholder='Compose new post...'
             placeholderTextColor="gray"
             multiline={true}
-            numberOfLines={2}
+            numberOfLines={3}
             onChangeText={(text) => setPostCaption(text)}
           />
           <View style={{ flexDirection: "row", paddingLeft: 5, marginBottom: 15 }}>
